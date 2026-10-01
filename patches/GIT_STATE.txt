@@ -1,0 +1,15 @@
+Base: public upstream verl
+  repo:   https://github.com/volcengine/verl.git
+  commit: 7aed6b230776f963fa09509c10d9c3a767d1102c
+          [ci] fix: FSDP actor/critic ci fail (#6550)
+
+Modified vs that commit:
+  verl/trainer/distillation/losses.py | 9 +++++++--   (patches/losses_global_batch_info.patch)
+
+Added (not in upstream):
+  verl/utils/reward_score/ttrl_math/  (code_snapshot/verl/utils/reward_score/ttrl_math/)
+
+Run from this package (no need to copy into verl):
+  scripts/run_qwen3_1p7b_tml_opd_dapo_math_seed.sh
+  scripts/run_standalone_eval.sh, scripts/write_eval_metrics.py
+  scripts/train_seeds.sh, scripts/eval_seeds.sh, scripts/run_all.sh
